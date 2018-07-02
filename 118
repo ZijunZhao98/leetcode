@@ -1,0 +1,32 @@
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+var generate = function(numRows) {
+    var returnArr = [];
+    if(numRows === 0){
+        return returnArr;
+    }
+    
+    returnArr.push([1]);  
+    if(numRows === 1){
+        return returnArr;
+    }
+    
+    returnArr.push([1,1]);
+    if(numRows === 2){
+        return returnArr;
+    }
+    
+    for(var i = 2; i < numRows; i ++){
+        var newArr = [1];
+        var lastArr = returnArr[i-1];
+        for(var j = 0; j < lastArr.length -1; j++){
+            newArr.push(lastArr[j] + lastArr[j + 1]);
+        }
+        newArr.push(1);
+        returnArr.push(newArr);
+    }
+    
+    return returnArr;
+};
