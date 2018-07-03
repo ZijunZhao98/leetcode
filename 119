@@ -1,0 +1,29 @@
+/**
+ * @param {number} rowIndex
+ * @return {number[]}
+ */
+
+//reference: https://blog.csdn.net/feliciafay/article/details/45146691
+
+var getRow = function(rowIndex) {
+    var returnArr = [1];
+ 
+    if(rowIndex === 0){
+        return returnArr;
+    }
+    
+    returnArr.push(1);
+    if(rowIndex === 1){
+        return returnArr;
+    }
+    
+    for(var i = 2; i <= rowIndex; i ++){
+        returnArr.push(1);
+        for(var j = i-1; j > 0; j--){
+            returnArr[j] = returnArr[j] + returnArr[j - 1];
+        }
+    }
+    
+    
+    return returnArr;
+};
