@@ -1,2 +1,2 @@
 # leetcode
-My solution to leetcode problems in js
+My solution to leetcode problems in js and java
